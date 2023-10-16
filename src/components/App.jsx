@@ -10,7 +10,7 @@ export const App = () => {
         color: '#010101'
       }}
     >
-     Redux Toolkit
+     Redux Toolkit Start
     </div>
   );
 };
