@@ -1,16 +1,15 @@
+import {Phonebook} from "./Phonebook/Phonebook"
+import {Contacts} from "./Contacts/Contacts"
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-     Redux Toolkit
-    </div>
+    <>
+         <h1 className="title">Phonebook</h1>
+         <Phonebook/>
+         <h2 className="title">Contacts</h2>
+         {/* <Filter/> */}
+         <Contacts/>
+
+    </>
   );
 };
