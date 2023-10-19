@@ -24,11 +24,13 @@
 //     contacts: PropTypes.arrayOf(PropTypes.object)
 // }
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./Contacts.css";
+import {deleteContact} from "../../redux/store"
 
 export const Contacts = () => {
     const contactsStart = useSelector(state => state.contacts)
+    const dispatch = useDispatch()
     console.log('contactsStart', contactsStart)
 
     return(
@@ -37,7 +39,7 @@ export const Contacts = () => {
                 {contactsStart.map(({name,id,number})=> {
                     return (
                         <li className="contacts_list" key={id}>{name}: {number}
-                   <button className="contacts_list_button" type="button">Delete</button>
+                   <button className="contacts_list_button" type="button" onClick={ () => dispatch(deleteContact(id))}>Delete</button>
                    </li>
                     )
                 })}
