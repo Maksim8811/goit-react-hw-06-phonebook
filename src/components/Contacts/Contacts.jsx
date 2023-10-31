@@ -31,7 +31,6 @@ import {deleteContact} from "../../redux/store"
 export const Contacts = () => {
     const contactsStart = useSelector(state => state.contacts)
     const dispatch = useDispatch()
-    console.log('contactsStart', contactsStart)
 
     return(
         <div className="container_contacts">

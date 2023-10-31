@@ -87,7 +87,7 @@ import { nanoid } from 'nanoid'
 export function Phonebook () {
     const contactsInitial = useSelector(state => state.contacts)
     const dispatch = useDispatch()
-    console.log('contactsInitial', contactsInitial)
+    // console.log('contactsInitial', contactsInitial)
 
     const loginInputId = nanoid()
     const telInputId = nanoid()
