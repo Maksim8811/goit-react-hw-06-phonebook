@@ -1,19 +1,19 @@
 import React from "react";
 import "./Filter.css";
 import { useDispatch, useSelector } from "react-redux";
-import {findContact} from "../../redux/store"
+import {filterContact} from "../../redux/store"
 
 export const Filter = () => {
 
-    const contactFilter = useSelector(state=>state.filter)
+    const contactFilter = useSelector(state => state.filter.value)
     // console.log('contactFilter', contactFilter)
     const dispatch = useDispatch()
 
-    // const onChange = e => {
-    //     const filterName = e.target.value
-    //     dispatch(findContact(filterName))
-    //     // console.log('filterName', filterName)
-    // }
+    const onChange = e => {
+        const filterName = e.target.value
+        // dispatch(filterContact(filterName))
+        console.log('filterName', filterName)
+    }
     
     return (
         <div>
@@ -24,7 +24,7 @@ export const Filter = () => {
                  value={contactFilter}
                  name="filter" 
                  type="text"
-                 onChange={e=>console.log('e.target.value', e.target.value)}
+                 onChange={e=>dispatch(filterContact(e.currentTarget.value))}
                  />
             </label>
         </div>
