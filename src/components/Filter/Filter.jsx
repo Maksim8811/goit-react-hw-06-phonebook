@@ -1,18 +1,14 @@
-import React from "react";
-import "./Filter.css";
-import { useDispatch, useSelector } from "react-redux";
+import "./Filter.css"
+import {useDispatch, useSelector} from "react-redux"
 import {filterContact} from "../../redux/store"
 
 export const Filter = () => {
 
-    const contactFilter = useSelector(state => state.filter.value)
-    // console.log('contactFilter', contactFilter)
+    const filter = useSelector(state => state.filter)
     const dispatch = useDispatch()
 
     const onChange = e => {
-        const filterName = e.target.value
-        // dispatch(filterContact(filterName))
-        console.log('filterName', filterName)
+        dispatch(filterContact(e.target.value))
     }
     
     return (
@@ -21,16 +17,14 @@ export const Filter = () => {
                 <input 
                  
                  className="filter_input"
-                 value={contactFilter}
+                 value={filter}
                  name="filter" 
                  type="text"
-                 onChange={e=>dispatch(filterContact(e.currentTarget.value))}
+                 onChange={onChange}
                  />
             </label>
         </div>
-        
-    )
-
+        )
 }
 
 

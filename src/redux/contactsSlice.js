@@ -1,6 +1,5 @@
-
-import { createSlice } from "@reduxjs/toolkit";
-import { nanoid } from "nanoid";
+import {createSlice} from "@reduxjs/toolkit"
+import {nanoid} from "nanoid"
 
 export const myContactSlice = createSlice({
     name: "contacts", 
@@ -16,7 +15,7 @@ export const myContactSlice = createSlice({
         return state.filter(todo=> todo.id !== action.payload) }
     }})
 
-    export const {addContact, deleteContact} = myContactSlice.actions
+export const {addContact, deleteContact} = myContactSlice.actions
 
 
 
