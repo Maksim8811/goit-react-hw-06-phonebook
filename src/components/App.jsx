@@ -10,7 +10,6 @@ export const App = () => {
          <h2 className="title">Contacts</h2>
          <Filter/>
          <Contacts/>
-
     </>
   );
 };

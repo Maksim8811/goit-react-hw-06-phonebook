@@ -1,6 +1,6 @@
 import "./Phonebook.css"
 import {useDispatch} from "react-redux"
-import {addContact} from "../../redux/store"
+import {addContact} from "../../redux/contactsSlice"
 import {nanoid} from 'nanoid'
 
 export function Phonebook () {
